@@ -1,0 +1,225 @@
+:root {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  color: #1f2440;
+  background: #f6f7fb;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f9faff 0%, #f4f5fb 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.app-header p {
+  margin: 0.3rem 0 0;
+  color: #66708f;
+}
+
+.app-nav {
+  margin: 1rem 0 1.3rem;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  color: #4a5376;
+  background: #eef1ff;
+  white-space: nowrap;
+}
+
+.nav-link.active {
+  background: #6d5efc;
+  color: #fff;
+}
+
+.app-content,
+.page-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eceffd;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(24, 39, 75, 0.05);
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-subtitle {
+  margin: 0.25rem 0 0.9rem;
+  color: #6c7394;
+}
+
+.stack-md {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.mood-pill {
+  border: 1px solid #dce0f5;
+  background: #f9faff;
+  border-radius: 12px;
+  padding: 0.5rem 0.35rem;
+  cursor: pointer;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.mood-pill.active {
+  border-color: #6d5efc;
+  background: #f0eeff;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field span {
+  font-size: 0.9rem;
+  color: #4a5376;
+}
+
+.field input,
+.field textarea {
+  border: 1px solid #d8dcef;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  background: #fff;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  border: 1px solid #dbe1fb;
+  background: #f7f9ff;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  color: #475074;
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: #7c6fff;
+  color: #3c2fe0;
+  background: #eeecff;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.65rem 0.95rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #6d5efc;
+  color: #fff;
+}
+
+.btn-ghost {
+  background: #ecf0ff;
+  color: #4c5683;
+}
+
+.timeline {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.timeline-item {
+  min-width: 88px;
+  text-align: center;
+  border: 1px solid #e4e8fb;
+  background: #fbfcff;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.timeline-mood {
+  font-size: 1.4rem;
+  margin: 0.2rem 0;
+}
+
+.insights-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #3e4666;
+}
+
+.chart-wrap {
+  width: 100%;
+  height: 260px;
+}
+
+.hint {
+  margin: 0;
+  color: #3f4ba3;
+  font-size: 0.92rem;
+}
+
+.empty-state {
+  margin: 0;
+  color: #6d7699;
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding: 1.5rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}
