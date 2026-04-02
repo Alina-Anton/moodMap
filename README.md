@@ -1,73 +1,103 @@
-# React + TypeScript + Vite
+# MoodMap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MoodMap** is a modern mood tracking application that helps users understand how their habits, behaviors, and daily activities impact their emotional well-being.
 
-Currently, two official plugins are available:
+Unlike traditional mood trackers, MoodMap focuses on **pattern detection, actionable insights, and behavioral recommendations**—turning raw data into meaningful self-awareness.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Hourly Mood Tracking
 
-## Expanding the ESLint configuration
+- Log mood throughout the day (not just once)
+- Add notes and contextual tags (work, sleep, exercise, social)
+- Visual timeline of mood fluctuations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Smart Insights
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Detect patterns between mood and habits
+- Example:
+  - _“You feel worse on days with < 6h sleep”_
+  - _“Your mood improves after exercise”_
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Recommendations Engine
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Suggest actions based on behavior:
+  - _“You’ve had 3 low-mood days → try a short walk”_
+  - _“You feel better after social activity → reach out to a friend”_
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Positive Reinforcement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Encouraging feedback based on trends:
+  - _“You handled a tough week well”_
+  - _“You improved compared to last week”_
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Analytics Dashboard
+
+- Weekly/monthly mood trends
+- Correlation between mood and tagged activities
+- Visual insights to support decision-making
+
+---
+
+## Tech Stack
+
+- **React + TypeScript**
+- **Zustand** (state management)
+- **Recharts** (data visualization)
+- **LocalStorage** (data persistence for MVP)
+
+---
+
+## Project Structure
+
+```bash
+src/
+├── app/
+│   ├── App.tsx
+│   └── providers.tsx
+├── features/
+│   ├── mood/
+│   │   ├── components/
+│   │   │   ├── MoodSelector.tsx
+│   │   │   └── MoodTimeline.tsx
+│   │   ├── hooks/
+│   │   │   └── useMood.ts
+│   │   ├── store/
+│   │   │   └── moodStore.ts
+│   │   └── types.ts
+│   ├── insights/
+│   │   ├── components/
+│   │   │   └── InsightsList.tsx
+│   │   ├── hooks/
+│   │   │   └── useInsights.ts
+│   │   └── utils/
+│   │       ├── detectPatterns.ts
+│   │       └── generateInsights.ts
+│   └── analytics/
+│       └── components/
+│           └── MoodChart.tsx
+├── pages/
+│   ├── HomePage.tsx
+│   ├── AnalyticsPage.tsx
+│   ├── HistoryPage.tsx
+│   └── InsightsPage.tsx
+├── shared/
+│   ├── components/
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   └── Input.tsx
+│   ├── constants/
+│   │   └── mood.ts
+│   └── utils/
+│       └── date.ts
+├── lib/
+│   └── storage.ts
+├── styles/
+│   └── globals.css
+├── types/
+│   └── index.ts
+└── main.tsx
+
 ```
