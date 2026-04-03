@@ -8,6 +8,11 @@ export const moodOptions: { value: MoodValue; emoji: string; label: string }[] =
   { value: 5, emoji: '😁', label: 'Great' },
 ]
 
+/** High → low, for SVG mood metric Y-axis (timeline + analytics). */
+export const moodMetricAxisLevels: { mood: MoodValue; label: string }[] = [...moodOptions]
+  .sort((a, b) => b.value - a.value)
+  .map(({ value, label }) => ({ mood: value, label }))
+
 export const tagOptions: MoodTag[] = ['work', 'sleep', 'exercise', 'social']
 
 export const encouragements = [

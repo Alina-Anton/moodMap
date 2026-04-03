@@ -1,15 +1,15 @@
-import { NavLink, Route, Routes } from 'react-router-dom'
-import { AnalyticsPage } from '../pages/AnalyticsPage'
-import { HistoryPage } from '../pages/HistoryPage'
-import { HomePage } from '../pages/HomePage'
-import { InsightsPage } from '../pages/InsightsPage'
+import { NavLink, Route, Routes } from "react-router-dom";
+import { AnalyticsPage } from "../pages/AnalyticsPage";
+import { HistoryPage } from "../pages/HistoryPage";
+import { HomePage } from "../pages/HomePage";
+import { InsightsPage } from "../pages/InsightsPage";
 
 const links = [
-  { to: '/', label: 'Today' },
-  { to: '/history', label: 'Timeline' },
-  { to: '/analytics', label: 'Analytics' },
-  { to: '/insights', label: 'Insights' },
-]
+  { to: "/", label: "Today" },
+  { to: "/history", label: "Timeline" },
+  { to: "/analytics", label: "Analytics" },
+  { to: "/insights", label: "Insights" },
+];
 
 export function App() {
   return (
@@ -24,8 +24,10 @@ export function App() {
           <NavLink
             key={link.to}
             to={link.to}
-            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-            end={link.to === '/'}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+            end={link.to === "/"}
           >
             {link.label}
           </NavLink>
@@ -41,5 +43,5 @@ export function App() {
         </Routes>
       </main>
     </div>
-  )
+  );
 }

@@ -45,7 +45,7 @@ Unlike traditional mood trackers, MoodMap focuses on **pattern detection, action
 
 - **React + TypeScript**
 - **Zustand** (state management)
-- **Recharts** (data visualization)
+- **SVG** (shared mood line metric for timeline + analytics)
 - **LocalStorage** (data persistence for MVP)
 
 ---
